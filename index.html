@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Livvic:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="p-5">
+  
+  <div class="container">
+    <h1 class="mb-4 text-danger">Sayohatingizni biz bilan rejalashtiring!</h1>
+
+    <div class="message d-none alert"></div>
+
+    <div class="user-info w-75 p-3 mx-auto">
+      <p class="user-name"></p>
+      <p class="use-money"></p>
+    </div>
+
+    <form class="calculate-form w-75 mx-auto bg-light p-3" action="https://echo.htmlacademy.ru" method="POST">
+      <div class="form-group">
+        <label for="name-input">Isminigizni kiriting:</label>
+        <input class="form-control name-input" type="text" id="name-input" name="name" placeholder="Ismingiz" required>
+      </div>
+
+      <div class="form-group">
+        <label for="money-input">Hisobingizdagi mablag'ni kiriting:</label>
+        <input class="form-control money-input" type="number" id="money-input" name="money" placeholder="Mablag'" required>
+      </div>
+
+      <button class="btn btn-primary btn-block" type="submit">Tekshirish</button>
+    </form>
+
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
