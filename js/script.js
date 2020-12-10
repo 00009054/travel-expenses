@@ -11,6 +11,11 @@ var travelPriceUzs = travelPrice * euroCurrency;
 var totalExpense = ticketPriceUzs + hotelPriceUzs + travelPriceUzs;
 totalExpense = Math.round(totalExpense);
 
+var name = '';
+var money = '';
+
+var info = `Assalomu alaykum, ${name}. Samalyot Xarajatlari: ${ticketPrice}.<br>Mehmonxona Xarajatlari: ${hotelPrice} USD.<br>Ko'ngilochar joylar Xarajatlari: ${travelPrice} USD.<br>Umumiy Xarajatlar: ${totalExpense} EUR.<br> Sizdagi mablag': ${money} UZS.<br>`;
+
 var elCalculateForm = document.querySelector('.calculate-form');
 
 elCalculateForm.addEventListener('submit', function (evt) {
@@ -19,16 +24,18 @@ elCalculateForm.addEventListener('submit', function (evt) {
   var elMessage = document.querySelector('.message');
   elMessage.classList.remove('d-none');
 
-  var name = elCalculateForm.querySelector('.name-input').value.trim();
-  var money = parseFloat(elCalculateForm.querySelector('.money-input').value.trim(), 10);
+  name += elCalculateForm.querySelector('.name-input').value.trim();
+  money += parseFloat(elCalculateForm.querySelector('.money-input').value.trim(), 10);
 
   if (money >= totalExpense){
-    elMessage.textContent = 'Oq yo\'l, ' + name;
+    info += `Oq yo'l, ${name}`;
     elMessage.classList.add('alert-success');
   } 
   else {
-    elMessage.textContent = name + ', ozgina sabr qilish kerak bo’lar ekan';
+    info += `${name}, ozgina sabr qilish kerak bo’lar ekan!`;
     elMessage.classList.add('alert-danger');
   }
+
+  elMessage.innerHTML = info;
 });
 
